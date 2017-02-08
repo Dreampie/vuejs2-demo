@@ -1,8 +1,8 @@
 {
-  "name": "funds-view",
-  "description": "A Funds view project",
+  "name": "vuejs2-demo",
+  "description": "A vuejs 2.x project",
   "version": "1.0.0",
-  "author": "wangrenhui <wangrenhui@meituan.com>",
+  "author": "Dreampie <Dreampie@outlook.com>",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --open --inline --hot --port 10001",

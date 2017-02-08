@@ -1,7 +1,7 @@
 {
   "apps": [
     {
-      "name": "vuejs-demo",
+      "name": "vuejs2-demo",
       "script": "server.js",
       "log_date_format": "YYYY-MM-DD HH:mm:ss",
       "instances": "0",
@@ -15,9 +15,6 @@
       "node_args": "--harmony --use-strict",
       "env_dev": {
         "NODE_ENV": "dev"
-      },
-      "env_devTest": {
-        "NODE_ENV": "devTest"
       },
       "env_prod": {
         "NODE_ENV": "prod"
