@@ -1,0 +1,1 @@
+export const RECEIVE_SESSION = 'RECEIVE_SESSION'

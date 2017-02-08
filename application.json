@@ -1,0 +1,12 @@
+{
+  "port": 10001,
+  "appKey": "com.vuejs.view",
+  "dev": {
+    "root": "http://localhost:10001",
+    "apiRoot": "http://localhost:9001"
+  },
+  "prod": {
+    "root": "http://localhost:10001",
+    "apiRoot": "http://localhost:9001"
+  }
+}
