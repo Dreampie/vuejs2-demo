@@ -14,9 +14,9 @@
         },
         methods: {
             start(){
+                const progress = $(this.$el)
                 progress.progress('reset')
                 this.show = true
-                const progress = $(this.$el)
                 const progressInterval = window.setInterval(() => {
                     if (progress.progress('get value') < 85) {
                         progress.progress('increment')
