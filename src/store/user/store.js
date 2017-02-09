@@ -14,15 +14,15 @@ const getters = {
 // actions
 const actions = {
     getUsers ({commit}) {
-        api.getUsers(users => {
-            commit(type.RECEIVE_USERS, {users})
+        api.getUsers().then(users => {
+            commit(type.SET_USERS, {users})
         })
     }
 }
 
 // mutations
 const mutations = {
-    [type.RECEIVE_USERS] (state, {users}) {
+    [type.SET_USERS] (state, {users}) {
         state.users = users
     }
 }

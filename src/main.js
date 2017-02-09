@@ -6,7 +6,7 @@ import resource from "./resource.js";
 //noinspection ES6UnusedImports
 import cookie from "./cookie.js";
 import router from "./router.js";
-import store from "./store/store.js";
+import store from "./store/index.js";
 import App from "./App.vue";
 
 new Vue({

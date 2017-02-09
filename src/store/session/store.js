@@ -14,17 +14,16 @@ const getters = {
 // actions
 const actions = {
     getSession ({commit}) {
-        api.getSession(session => {
+        api.getSession().then(session => {
             window.localStorage.setItem("session", session)
-            window.localStorage.setItem("sso", 0)
-            commit(type.RECEIVE_SESSION, {session})
+            commit(type.SET_SESSION, {session})
         })
     },
     deleteSession({commit}) {
         api.deleteSession(result => {
             if (result) {
                 window.localStorage.removeItem("session")
-                commit(type.RECEIVE_SESSION, {})
+                commit(type.SET_SESSION, {})
             }
         })
     }
@@ -32,7 +31,7 @@ const actions = {
 
 // mutations
 const mutations = {
-    [type.RECEIVE_SESSION] (state, {session}) {
+    [type.SET_SESSION] (state, {session}) {
         state.session = session
     }
 }

@@ -1,1 +1,1 @@
-export const RECEIVE_USERS = 'RECEIVE_SESSION'
+export const SET_USERS = 'SET_SESSION'
