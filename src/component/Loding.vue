@@ -14,6 +14,7 @@
         },
         methods: {
             start(){
+                console.log("start")
                 this.show = true
                 const progress = $(this.$el).find('.progress')
 
@@ -25,6 +26,7 @@
                 }, 10);
             },
             complete(){
+                console.log("complete")
                 const progress = $(this.$el).find('.progress')
                 window.clearInterval(this.progressInterval)
                 progress.progress('complete')
@@ -33,8 +35,8 @@
             }
         },
         mounted () {
-            this.$bus.$on('v-loading:start', this.start())
-            this.$bus.$on('v-loading:complete', this.complete())
+            this.$bus.$on('v-loading:start', this.start)
+            this.$bus.$on('v-loading:complete', this.complete)
         }
     }
 </script>
