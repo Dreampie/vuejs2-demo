@@ -7,6 +7,8 @@
             <v-menu :session="session"></v-menu>
         </header>
         <router-view class="main"></router-view>
+        icon:
+        <i class="chevron up icon"></i>
         <!--foot-->
         <footer class="ui footer segment">
             <div class="container">
@@ -24,7 +26,7 @@
 </template>
 
 <script>
-    require('./asset/semantic-ui/semantic.min.js')
+    import './asset/semantic-ui/semantic.min.js'
 
     import {mapGetters, mapActions} from 'vuex'
     import Loading from './component/Loding.vue'
