@@ -14,6 +14,7 @@
         },
         methods: {
             start(){
+                progress.progress('reset')
                 this.show = true
                 const progress = $(this.$el)
                 const progressInterval = window.setInterval(() => {
@@ -22,17 +23,15 @@
                     } else {
                         window.clearInterval(progressInterval)
                     }
-                }, 10)
+                }, 500)
             },
             complete(){
-                console.log('complete')
                 const progress = $(this.$el)
-                window.setTimeout(() => {
-                    progress.progress('increment')
-                }, 10)
+                progress.progress('complete')
 
-//                this.show = false
-//                progress.progress('reset')
+                window.setTimeout(() => {
+                    this.show = false
+                }, 500)
             }
         },
         mounted () {
