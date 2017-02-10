@@ -31,7 +31,7 @@
             return {
                 menus: {
                     left: [
-                        {name: '调拨', url: '/allocates'}
+                        {name: '用户', url: '/users'}
                     ],
                     right: []
                 }
