@@ -1,7 +1,9 @@
 <template>
-    <h1>
-        {{welcome}}
-    </h1>
+    <div style="height: 2000px">
+        <h1>
+            {{welcome}}
+        </h1>
+    </div>
 </template>
 
 <script>

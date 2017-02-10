@@ -7,8 +7,6 @@
             <v-menu :session="session"></v-menu>
         </header>
         <router-view class="main"></router-view>
-        icon:
-        <i class="chevron up icon"></i>
         <!--foot-->
         <footer class="ui footer segment">
             <div class="container">
@@ -21,7 +19,7 @@
                 </div>
             </div>
         </footer>
-        <a class="back-top" href="javascript:void(0);"><i class="chevron up icon"></i></a>
+        <v-back-top></v-back-top>
     </div>
 </template>
 
@@ -31,6 +29,7 @@
     import {mapGetters, mapActions} from 'vuex'
     import Loading from './component/Loding.vue'
     import Menu from './component/Menu.vue'
+    import BackTop from './component/BackTop.vue'
 
     export default {
         name: 'app',
@@ -42,6 +41,7 @@
             }
         },
         components: {
+            'v-back-top': BackTop,
             'v-loading': Loading,
             'v-menu': Menu
         },
@@ -76,8 +76,8 @@
     }
 
     .bodyer {
-        /*min-height: 100%;*/
-        /*position: relative;*/
+        min-height: 100%;
+        position: relative;
     }
 
     .bodyer .header {
@@ -106,25 +106,5 @@
 
     .bodyer .footer .container a:hover {
         color: rgba(0, 0, 0, 0.8);
-    }
-
-    .back-top {
-        display: none;
-        font-size: 30px;
-        position: fixed;
-        bottom: 50px;
-        right: 40px;
-        top: auto;
-        cursor: pointer;
-        z-index: 999;
-        color: rgba(0, 0, 0, 0.6);
-    }
-
-    .back-top:hover {
-        color: rgba(0, 0, 0, 0.8);
-        -moz-transition: all 0.5s ease;
-        -webkit-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
     }
 </style>
