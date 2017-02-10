@@ -1,23 +1,21 @@
 <template>
-    <div class="ui secondary pointing menu">
-        <router-link class="item" to="/" exact>
+    <div class="ui menu">
+        <router-link class="ui item" to="/" exact>
             <img src="../asset/logo.png">
         </router-link>
-        <router-link v-for="menu in menus.left" class="item" :to="{path:menu.url}" exact>
+        <router-link v-for="menu in menus.left" class="ui item" :to="{path:menu.url}" exact>
             {{menu.name}}
         </router-link>
         <div class="right menu">
-            <router-link v-for="menu in menus.right" class="item" :to="{path:menu.url}" exact>
+            <router-link v-for="menu in menus.right" class="ui item" :to="{path:menu.url}" exact>
                 {{menu.name}}
             </router-link>
-            <a v-if="!session" class="item" @click="login">登录</a>
-            <div v-if="session" class="ui dropdown item">
-                {{session.realname}} <i class="dropdown icon"></i>
-                <div class="menu">
-                    <a class="item">设置</a>
-                    <a class="item" @click="deleteSession">退出</a>
-                </div>
-            </div>
+            <a v-if="!session.id" class="ui item" @click="login">
+                您好, 请&nbsp;<span style="color: #912d2b">登录!</span>
+            </a>
+            <a v-if="session.id" class="ui item" @click="deleteSession">
+                欢迎, {{session.realname}}&nbsp;<span style="color: #912d2b">退出!</span>
+            </a>
         </div>
     </div>
 </template>
@@ -29,11 +27,11 @@
     export default {
         name: 'v-menu',
         props: ['session'],
-        data: function () {
+        data(){
             return {
                 menus: {
                     left: [
-                        {name: '用户', url: '/users'}
+                        {name: '调拨', url: '/allocates'}
                     ],
                     right: []
                 }
@@ -52,3 +50,9 @@
         }
     }
 </script>
+
+<style lang="stylus">
+    .menu {
+        border-radius: 0rem !important;
+    }
+</style>
